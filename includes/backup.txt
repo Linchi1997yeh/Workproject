@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS users (
+	userid int(11) not NULL PRIMARY KEY AUTO_INCREMENT,
+    username varchar(15) not NULL,
+    password varchar(32) not NULL,
+    date datetime not NULL
+);
+
+insert into users (username,password,date) VALUES ('admin','password','2019-01-12 23:10:59');
+
+insert into users (username,password,date) VALUES ('admin','password','2019-01-12 23:44:59');
+insert into users (username,password,date) VALUES ('aaa','111','2019-01-12 23:44:59');
+insert into users (username,password,date) VALUES ('bbb','222','2019-01-12 23:44:59');
+insert into users (username,password,date) VALUES ('ccc','333','2019-01-12 23:44:59');
+insert into users (username,password,date) VALUES ('ddd','444','2019-01-12 23:44:59');
+insert into users (username,password,date) VALUES ('eee','555','2019-01-12 23:44:59');
+
+select * from users where userid='1' AND username='admin'
+
+update users
+set username='admin2', password='password2'
+where userid='1'
+
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('123456','22.997742','120.220933','Tainan',);
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('821TAS','23.000772','120.230733','Tainan');
+
+
+ALTER TABLE vehicle
+ADD COLUMN time datetime not NULL;
+
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('821TAS','23.000772','120.230733','Tainan','2019-01-01 09:14:09');
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('821TAS','22.990772','120.220733','Tainan','2019-01-03 07:31:43');
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('821TAS','22.980772','120.210733','Tainan','2019-01-05 18:01:59');
+insert into vehicle (vehicle_licence,location_lat,location_lgn,city,time) VALUES ('821TAS','22.970772','120.200733','Tainan','2019-01-10 01:48:44');
